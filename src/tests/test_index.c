@@ -680,7 +680,7 @@ int testIndexSpec() {
 
   FieldSpec *f = IndexSpec_GetField(s, body, strlen(body));
   ASSERT(f != NULL);
-  ASSERT(f->type == F_FULLTEXT);
+  ASSERT(f->type == FIELD_FULLTEXT);
   ASSERT(strcmp(f->name, body) == 0);
   ASSERT(f->weight == 2.0);
   ASSERT(f->id == 2);
@@ -689,7 +689,7 @@ int testIndexSpec() {
 
   f = IndexSpec_GetField(s, title, strlen(title));
   ASSERT(f != NULL);
-  ASSERT(f->type == F_FULLTEXT);
+  ASSERT(f->type == FIELD_FULLTEXT);
   ASSERT(strcmp(f->name, title) == 0);
   ASSERT(f->weight == 0.1);
   ASSERT(f->id == 1);
@@ -698,7 +698,7 @@ int testIndexSpec() {
 
   f = IndexSpec_GetField(s, foo, strlen(foo));
   ASSERT(f != NULL);
-  ASSERT(f->type == F_FULLTEXT);
+  ASSERT(f->type == FIELD_FULLTEXT);
   ASSERT(strcmp(f->name, foo) == 0);
   ASSERT(f->weight == 1);
   ASSERT(f->id == 4);
@@ -707,7 +707,7 @@ int testIndexSpec() {
 
   f = IndexSpec_GetField(s, bar, strlen(bar));
   ASSERT(f != NULL);
-  ASSERT(f->type == F_NUMERIC);
+  ASSERT(f->type == FIELD_NUMERIC);
   ASSERT(strcmp(f->name, bar) == 0);
   ASSERT(f->weight == 0);
   ASSERT(f->id == 0);
@@ -717,7 +717,7 @@ int testIndexSpec() {
 
   f = IndexSpec_GetField(s, name, strlen(name));
   ASSERT(f != NULL);
-  ASSERT(f->type == F_FULLTEXT);
+  ASSERT(f->type == FIELD_FULLTEXT);
   ASSERT(strcmp(f->name, name) == 0);
   ASSERT(f->weight == 1);
   ASSERT(f->id == 8);
