@@ -230,4 +230,5 @@ Document *Redis_LoadDocuments(RedisSearchCtx *ctx, RedisModuleString **keys, int
  */
 int Redis_SaveDocument(RedisSearchCtx *ctx, Document *doc);
 
+DocumentField *Document_GetField(Document *d, const char *fieldName);
 #endif
