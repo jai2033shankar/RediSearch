@@ -2,7 +2,7 @@ ifndef RM_INCLUDE_DIR
 	RM_INCLUDE_DIR=../
 endif
 
-CFLAGS = -g -O2 -fPIC -std=gnu99 -I./ 
+CFLAGS = -g -O3 -fPIC -std=gnu99 -I./ 
 CFLAGS += -I$(RM_INCLUDE_DIR)
 %.c: %.y
 
@@ -74,6 +74,12 @@ index: test_index.o
 test_index: index	
 	@(sh -c ./test_index)
 .PHONY: test_index
+
+test_attribute_index: 
+	$(CC) $(CFLAGS) -o $@ $@.c $ $(DEPS) $(LDFLAGS)
+	@(sh -c ./$@)
+.PHONY: test_attribute_index
+
 
 range: test_range.o
 	$(CC) $(CFLAGS)  -o test_range test_range.o $ $(DEPS) $(LDFLAGS)
